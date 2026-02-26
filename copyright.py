@@ -5,6 +5,7 @@ import time
 import datetime
 import random 
 import asyncio
+from dotenv import load_dotenv
 from pytz import timezone
 from pyrogram import filters, Client, idle
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
@@ -14,6 +15,7 @@ import traceback
 
 from apscheduler.schedulers.background import BackgroundScheduler
 
+load_dotenv()
 
 API_ID = int(os.getenv("API_ID", "22657083"))
 API_HASH = os.getenv("API_HASH", "d6186691704bd901bdab275ceaab88f3")
