@@ -17,12 +17,11 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 load_dotenv()
 
-bot = Client(
-    "mybot",
-    api_id=int(os.environ.get("API_ID")),
-    api_hash=os.environ.get("API_HASH"),
-    bot_token=os.environ.get("BOT_TOKEN")
-)
+API_ID = int(os.getenv("API_ID", ""))
+API_HASH = os.getenv("API_HASH", "")
+
+# Get your token from @BotFather on Telegram.
+BOT_TOKEN = getenv("BOT_TOKEN","8760934171:AAH_hGrGPreUTm6K8xkmGkg3ISJVc_C4w7c")
 
 DEVS = [8531043812]
 BOT_USERNAME = "editguardsrobot" # change your bot username without @
