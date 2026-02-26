@@ -23,6 +23,13 @@ API_HASH = os.getenv("API_HASH", "")
 # Get your token from @BotFather on Telegram.
 BOT_TOKEN = "8760934171:AAH_hGrGPreUTm6K8xkmGkg3ISJVc_C4w7c"
 
+bot = Client(
+    "editguardsrobot",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN
+)
+
 DEVS = [8531043812]
 BOT_USERNAME = "editguardsrobot" # change your bot username without @
 PING_IMG_URL = "https://files.catbox.moe/qrv1xs.jpg"
