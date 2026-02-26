@@ -21,7 +21,7 @@ API_ID = int(os.getenv("API_ID", ""))
 API_HASH = os.getenv("API_HASH", "")
 
 # Get your token from @BotFather on Telegram.
-BOT_TOKEN = ""
+BOT_TOKEN = "8284754077:AAEET5mQ0H0roQz7JBpOYVys3pmT82RX4gA"
 
 bot = Client(
     "editguardsrobot",
@@ -30,8 +30,9 @@ bot = Client(
     bot_token=BOT_TOKEN
 )
 
-DEVS = [8531043812,7651303468]
-BOT_USERNAME = "editguardsrobot" # change your bot username without @
+
+DEVS = [7651303468]
+BOT_USERNAME = "@Snowy_handler_bot" # change your bot username without @
 PING_IMG_URL = "https://files.catbox.moe/qrv1xs.jpg"
 
 ALL_GROUPS = []
@@ -83,7 +84,7 @@ START_MESSAGE = """
 BUTTON = [
            [
             InlineKeyboardButton("➕ ᴧᴅᴅ ϻє ᴛσ ɢʀσᴜᴘ ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=s&admin=delete_messages"),
-            InlineKeyboardButton("✦ ˹ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ˼ 🎧  🚫🔥", url=f"https://t.me/veronmeetup"),
+            InlineKeyboardButton("✦ ˹ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ˼ 🎧  🚫🔥", url=f"https://t.me/dark_musictm"),
            ]
          ] 
 
