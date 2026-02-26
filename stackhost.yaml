@@ -1,14 +1,6 @@
-user:
-  name: vishal-1756
-  github: vishal-1756
+build:
+  docker:
+    worker: Dockerfile
 
-language: "python"
-python_version: "3.11"
-
-commands:
-  build:
-    - "pip install -r requirements.txt"
-  
-  start:
-    - "python3 copyright.py"
-
+run:
+  worker: python3 main.py
