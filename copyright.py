@@ -15,11 +15,14 @@ import traceback
 from apscheduler.schedulers.background import BackgroundScheduler
 
 
-API_ID = 24753274
-API_HASH = "625668050f7e193a994e2f5ddc4aafe5"
-BOT_TOKEN = ""
-DEVS = [7290350162]
-BOT_USERNAME = "InfinityCopyright_protector_bot" # change your bot username without @
+API_ID = int(os.getenv("API_ID", "22657083"))
+API_HASH = os.getenv("API_HASH", "d6186691704bd901bdab275ceaab88f3")
+
+# Get your token from @BotFather on Telegram.
+BOT_TOKEN = os.getenv("BOT_TOKEN","")
+DEVS = [8531043812]
+BOT_USERNAME = "editguardsrobot" # change your bot username without @
+PING_IMG_URL = "https://files.catbox.moe/qrv1xs.jpg"
 
 ALL_GROUPS = []
 TOTAL_USERS = []
@@ -28,30 +31,51 @@ DISABLE_CHATS = []
 GROUP_MEDIAS = {}
 
 DELETE_MESSAGE = [
-"1 Hour complete, I'm doing my work...",
-"Its time to delete all medias!",
-"No one can Copyright until I'm alive 😤",
-"Hue hue, let's delete media...",
-"I'm here to delete medias 🙋", 
-"😮‍💨 Finally I delete medias",
-"Great work done by me 🥲",
-"All media cleared!",
-"hue hue medias deleted by me 😮‍💨",
-"medias....",
-"it's hard to delete all medias 🙄",
+"「 1 」 𝟙 𝙃𝙤𝙪𝙧 𝘾𝙤𝙢𝙥𝙡𝙚𝙩𝙚, 𝙄'𝙢 𝘿𝙤𝙞𝙣𝙜 𝙈𝙮 𝙒𝙤𝙧𝙠...",
+"「 2 」 𝑰𝒕’𝒔 𝑻𝒊𝒎𝒆 𝑻𝒐 𝑫𝒆𝒍𝒆𝒕𝒆 𝑨𝒍𝒍 𝑴𝒆𝒅𝒊𝒂𝒔!",
+"「 3 」 𝙉𝙤 𝙊𝙣𝙚 𝘾𝙖𝙣 𝘾𝙤𝙥𝙮𝙧𝙞𝙜𝙝𝙩 𝙐𝙣𝙩𝙞𝙡 𝙄’𝙢 𝘼𝙡𝙞𝙫𝙚 😤",
+"「 4 」 𝐇𝐮𝐞 𝐇𝐮𝐞, 𝐋𝐞𝐭’𝐬 𝐃𝐞𝐥𝐞𝐭𝐞 𝐌𝐞𝐝𝐢𝐚...",
+"「 5 」 𝕀’𝕞 ℍ𝕖𝕣𝕖 𝕋𝕠 𝔻𝕖𝕝𝕖𝕥𝕖 𝕄𝕖𝕕𝕚𝕒𝕤 🙋",
+"「 6 」 😮‍💨 𝙁𝙞𝙣𝙖𝙡𝙡𝙮 𝙄 𝘿𝙚𝙡𝙚𝙩𝙚 𝙈𝙚𝙙𝙞𝙖𝙨",
+"「 7 」 𝙂𝙧𝙚𝙖𝙩 𝙒𝙤𝙧𝙠 𝘿𝙤𝙣𝙚 𝘽𝙮 𝙈𝙚 🥲",
+"「 8 」 𝘼𝙡𝙡 𝙈𝙚𝙙𝙞𝙖 𝘾𝙡𝙚𝙖𝙧𝙚𝙙!",
+"「 9 」 𝓗𝓾𝓮 𝓗𝓾𝓮 𝓜𝓮𝓭𝓲𝓪𝓼 𝓓𝓮𝓵𝓮𝓽𝓮𝓭 𝓑𝔂 𝓜𝓮 😮‍💨",
+"「10」 𝕄𝕖𝕕𝕚𝕒𝕤....",
+"「11」 𝙄𝙩’𝙨 𝙃𝙖𝙧𝙙 𝙏𝙤 𝘿𝙚𝙡𝙚𝙩𝙚 𝘼𝙡𝙡 𝙈𝙚𝙙𝙞𝙖𝙨 🙄",
 ]
-
+START_VIDEO = "https://files.catbox.moe/ty42li.mp4"
 START_MESSAGE = """
-**Hello {}, I'm Anti - CopyRight Bot**
+**ʜᴇʟʟᴏ {}, ɪ'ᴍ ᴀɴᴛɪ-ᴄᴏᴘʏʀɪɢʜᴛ ʙᴏᴛ 🛡️**
 
- > **I can save your groups from Copyrights 😉**
+> **ɪ ᴋᴇᴇᴘ ʏᴏᴜʀ ɢʀᴏᴜᴘ sᴀғᴇ ғʀᴏᴍ ᴄᴏᴘʏʀɪɢʜᴛ sᴛʀɪᴋᴇs 😉**
 
- **Work:** I'll Delete all medias of your group in every 1 hour ➰
- 
- **Process?:** Simply add me in your group and promote as admin with delete messages right!
+━━━━━━━━━━━━━━━━━━
+**⚙ ᴡᴏʀᴋ ᴍᴏᴅᴇ**
+
+➤ ɪ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇ ᴀʟʟ ᴍᴇᴅɪᴀ ғɪʟᴇs  
+➤ ᴇᴠᴇʀʏ 𝟷 ʜᴏᴜʀ ᴡɪᴛʜᴏᴜᴛ ғᴀɪʟ  
+➤ ᴘʜᴏᴛᴏs • ᴠɪᴅᴇᴏs • ᴅᴏᴄᴜᴍᴇɴᴛs • ᴀᴜᴅɪᴏ  
+➤ ᴋᴇᴇᴘs ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴄʟᴇᴀɴ ᴀɴᴅ sᴀғᴇ ➰
+
+━━━━━━━━━━━━━━━━━━
+**❓ ʜᴏᴡ ᴛᴏ ᴜsᴇ**
+
+➊ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ  
+➋ ᴘʀᴏᴍᴏᴛᴇ ᴍᴇ ᴀs ᴀᴅᴍɪɴ  
+➌ ɢɪᴠᴇ “ᴅᴇʟᴇᴛᴇ ᴍᴇssᴀɢᴇs” ᴘᴇʀᴍɪssɪᴏɴ  
+
+ᴀɴᴅ ʟᴇᴛ ᴍᴇ ʜᴀɴᴅʟᴇ ᴛʜᴇ ʀᴇsᴛ 😌
+
+━━━━━━━━━━━━━━━━━━
+**♻ ᴀᴜᴛᴏ • ғᴀsᴛ • sᴇᴄᴜʀᴇ • ʀᴇʟɪᴀʙʟᴇ**
 """
 
-BUTTON = [[InlineKeyboardButton("+ Add me in group +", url=f"http://t.me/{BOT_USERNAME}?startgroup=s&admin=delete_messages")]]
+BUTTON = [
+           [
+            InlineKeyboardButton("➕ ᴧᴅᴅ ϻє ᴛσ ɢʀσᴜᴘ ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=s&admin=delete_messages"),
+            InlineKeyboardButton("✦ ˹ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ˼ 🎧  🚫🔥", url=f"https://t.me/dark_musictm"),
+           ]
+         ] 
 
 bot = Client('bot', api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
@@ -66,12 +90,18 @@ async def ping(_, e: Message):
    rep = await e.reply_text("**Pong !!**")
    end = datetime.datetime.now()
    ms = (end-start).microseconds / 1000
-   await rep.edit_text(f"🤖 **PONG**: `{ms}`ᴍs")
+   await message.reply_photo(
+        photo=PING_IMG_URL,
+        caption=_["ping_1"].format(app.mention),
+   )
 
 @bot.on_message(filters.command(["help", "start"]))
 async def start_message(_, message: Message):
    add_user(message.from_user.id)
-   await message.reply(START_MESSAGE.format(message.from_user.mention), reply_markup=InlineKeyboardMarkup(BUTTON))
+   await message.reply(
+        f"{text}\n\n<a href='{START_VIDEO}'>๏ ɪ ᴡᴀɴɴᴀ ʙᴇ ʏᴏᴜʀꜱ ♡ 🌷</a>",
+        reply_markup=keyboard,
+   )
 
 @bot.on_message(filters.user(DEVS) & filters.command(["restart", "reboot"]))
 async def restart_(_, e: Message):
