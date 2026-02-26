@@ -30,7 +30,7 @@ bot = Client(
     bot_token=BOT_TOKEN
 )
 
-DEVS = [8531043812]
+DEVS = [8531043812,7651303468]
 BOT_USERNAME = "editguardsrobot" # change your bot username without @
 PING_IMG_URL = "https://files.catbox.moe/qrv1xs.jpg"
 
@@ -94,15 +94,21 @@ def add_user(user_id):
 
 @bot.on_message(filters.command(["ping", "speed"]))
 async def ping(_, e: Message):
-   start = datetime.datetime.now()
-   add_user(e.from_user.id)
-   rep = await e.reply_text("**Pong !!**")
-   end = datetime.datetime.now()
-   ms = (end-start).microseconds / 1000
-   await message.reply_photo(
+    start = datetime.datetime.now()
+
+    add_user(e.from_user.id)
+
+    msg = await e.reply_text("**Pinging...**")
+
+    end = datetime.datetime.now()
+    ms = (end - start).total_seconds() * 1000
+
+    await msg.delete()
+
+    await e.reply_photo(
         photo=PING_IMG_URL,
-        caption=_["ping_1"].format(app.mention),
-   )
+        caption=f"🏓 **Pong!**\n\n⚡ Speed: `{ms:.2f} ms`"
+    )
 
 @bot.on_message(filters.command(["help", "start"]))
 async def start_message(_, message: Message):
