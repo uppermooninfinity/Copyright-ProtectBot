@@ -17,11 +17,13 @@ from apscheduler.schedulers.background import BackgroundScheduler
 
 load_dotenv()
 
-API_ID = int(os.getenv("API_ID", "22657083"))
-API_HASH = os.getenv("API_HASH", "d6186691704bd901bdab275ceaab88f3")
+bot = Client(
+    "mybot",
+    api_id=int(os.environ.get("API_ID")),
+    api_hash=os.environ.get("API_HASH"),
+    bot_token=os.environ.get("BOT_TOKEN")
+)
 
-# Get your token from @BotFather on Telegram.
-BOT_TOKEN = os.getenv("BOT_TOKEN","")
 DEVS = [8531043812]
 BOT_USERNAME = "editguardsrobot" # change your bot username without @
 PING_IMG_URL = "https://files.catbox.moe/qrv1xs.jpg"
@@ -79,7 +81,6 @@ BUTTON = [
            ]
          ] 
 
-bot = Client('bot', api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
 
 def add_user(user_id):
    if user_id not in TOTAL_USERS:
