@@ -21,7 +21,7 @@ API_ID = int(os.getenv("API_ID", ""))
 API_HASH = os.getenv("API_HASH", "")
 
 # Get your token from @BotFather on Telegram.
-BOT_TOKEN = "8760934171:AAH_hGrGPreUTm6K8xkmGkg3ISJVc_C4w7c"
+BOT_TOKEN = ""
 
 bot = Client(
     "editguardsrobot",
