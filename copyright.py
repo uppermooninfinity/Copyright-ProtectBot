@@ -112,11 +112,13 @@ async def ping(_, e: Message):
 
 @bot.on_message(filters.command(["help", "start"]))
 async def start_message(_, message: Message):
-   add_user(message.from_user.id)
-   await message.reply(
-        f"{text}\n\n<a href='{START_VIDEO}'>๏ ɪ ᴡᴀɴɴᴀ ʙᴇ ʏᴏᴜʀꜱ ♡ 🌷</a>",
-        reply_markup=keyboard,
-   )
+    add_user(message.from_user.id)
+
+    await message.reply(
+        START_MESSAGE.format(message.from_user.mention) +
+        f"\n\n<a href='{START_VIDEO}'>๏ ɪ ᴡᴀɴɴᴀ ʙᴇ ʏᴏᴜʀꜱ ♡ 🌷</a>",
+        reply_markup=InlineKeyboardMarkup(BUTTON),
+    )
 
 @bot.on_message(filters.user(DEVS) & filters.command(["restart", "reboot"]))
 async def restart_(_, e: Message):
