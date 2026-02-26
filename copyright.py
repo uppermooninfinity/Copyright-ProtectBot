@@ -83,7 +83,7 @@ START_MESSAGE = """
 BUTTON = [
            [
             InlineKeyboardButton("➕ ᴧᴅᴅ ϻє ᴛσ ɢʀσᴜᴘ ➕", url=f"http://t.me/{BOT_USERNAME}?startgroup=s&admin=delete_messages"),
-            InlineKeyboardButton("✦ ˹ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ˼ 🎧  🚫🔥", url=f"https://t.me/dark_musictm"),
+            InlineKeyboardButton("✦ ˹ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ˼ 🎧  🚫🔥", url=f"https://t.me/veronmeetup"),
            ]
          ] 
 
